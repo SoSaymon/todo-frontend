@@ -60,13 +60,20 @@ const TodoList: React.FC = () => {
     if (error) return <p>Error :(</p>;
 
     return (
-        <div>
+        <div className="max-w-xl mx-auto mt-10 p-5 bg-gray-200 rounded">
             <AddTodo refetch={refetch} />
             {data.getAllUserNotes.map((note: Note) => (
-                <div key={note.id}>
+                <div key={note.id} className="mb-4 p-4 bg-white rounded shadow">
                     <TodoItem title={note.title} description={note.description} done={note.done} />
-                    <EditTodo noteId={note.id} initialTitle={note.title} initialDescription={note.description} initialDone={note.done} />
-                    <DeleteTodo noteId={note.id} />
+                    <div className="flex justify-end mt-2 space-x-2">
+                        <EditTodo
+                            noteId={note.id}
+                            initialTitle={note.title}
+                            initialDescription={note.description}
+                            initialDone={note.done}
+                        />
+                        <DeleteTodo noteId={note.id} />
+                    </div>
                 </div>
             ))}
         </div>

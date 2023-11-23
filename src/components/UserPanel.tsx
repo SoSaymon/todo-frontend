@@ -29,13 +29,13 @@ const UserPanel: React.FC = () => {
     if (error) return <p>Error :(</p>;
 
     return (
-        <div>
-            <h2>User Panel</h2>
-            <p>Username: {data.getUser.username}</p>
-            <p>Email: {data.getUser.email}</p>
-            <p>Is Active: {data.getUser.isActive ? 'Yes' : 'No'}</p>
-            <p>Is Admin: {data.getUser.isAdmin ? 'Yes' : 'No'}</p>
-            <p>Created At: {data.getUser.createdAt}</p>
+        <div className="max-w-md mx-auto mt-10 p-5 bg-gray-200 rounded">
+            <h2 className="text-2xl font-bold mb-3">User Panel</h2>
+            <p className="mb-1">Username: {data.getUser.username}</p>
+            <p className="mb-1">Email: {data.getUser.email}</p>
+            <p className="mb-1">Is Active: {data.getUser.isActive ? 'Yes' : 'No'}</p>
+            <p className="mb-1">Is Admin: {data.getUser.isAdmin ? 'Yes' : 'No'}</p>
+            <p className="mb-1">Created At: {data.getUser.createdAt}</p>
             <p>Last Login: {data.getUser.lastLogin}</p>
         </div>
     );

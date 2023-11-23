@@ -30,21 +30,47 @@ const RegisterPage: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Username:
-                <input type="text" value={username} onChange={e => setUsername(e.target.value)} required />
-            </label>
-            <label>
-                Email:
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
-            </label>
-            <label>
-                Password:
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
-            </label>
-            <button type="submit">Register</button>
-        </form>
+        <div className="max-w-md mx-auto mt-10">
+            <h2 className="text-2xl font-bold mb-5">Register</h2>
+            <form className="flex flex-col p-5 bg-gray-200 rounded" onSubmit={handleSubmit}>
+                <label className="mb-3">
+                    <span className="block text-sm">Username:</span>
+                    <input
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        className="p-2 border border-gray-300 rounded"
+                        required
+                    />
+                </label>
+                <label className="mb-3">
+                    <span className="block text-sm">Email:</span>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="p-2 border border-gray-300 rounded"
+                        required
+                    />
+                </label>
+                <label className="mb-3">
+                    <span className="block text-sm">Password:</span>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="p-2 border border-gray-300 rounded"
+                        required
+                    />
+                </label>
+                <button
+                    type="submit"
+                    className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition-all duration-300"
+                >
+                    Register
+                </button>
+            </form>
+        </div>
     );
 };
 

@@ -25,7 +25,12 @@ const DeleteTodo: React.FC<DeleteTodoProps> = ({ noteId }) => {
     };
 
     return (
-        <button onClick={handleDelete}>Delete Note</button>
+        <button
+            onClick={handleDelete}
+            className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition-all duration-300"
+        >
+            Delete Note
+        </button>
     );
 };
 

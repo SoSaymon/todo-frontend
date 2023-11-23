@@ -33,17 +33,37 @@ const LoginPage: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Email:
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
-            </label>
-            <label>
-                Password:
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
-            </label>
-            <button type="submit">Log in</button>
-        </form>
+        <div className="p-5 bg-gray-200 rounded w-96 mx-auto mt-10">
+            <h2 className="text-2xl font-bold mb-5">Login</h2>
+            <form className="flex flex-col" onSubmit={handleSubmit}>
+                <label className="mb-3">
+                    <span className="block text-sm">Email:</span>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="p-2 border border-gray-300 rounded"
+                        required
+                    />
+                </label>
+                <label className="mb-3">
+                    <span className="block text-sm">Password:</span>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="p-2 border border-gray-300 rounded"
+                        required
+                    />
+                </label>
+                <button
+                    type="submit"
+                    className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-all duration-300"
+                >
+                    Log in
+                </button>
+            </form>
+        </div>
     );
 };
 
